@@ -1,4 +1,4 @@
-# SS6 Spine Toolkit
+# SS6-To-Spine Toolkit
 
 A Python toolkit for extracting, previewing, validating, and converting **SpriteStudio 6 / SS6Player for Unity** character animations from Unity AssetBundles into **Spine 4.2 JSON**.
 
