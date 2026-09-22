@@ -1,0 +1,148 @@
+{
+  "animation": "mot_action_01",
+  "fps": 30.0,
+  "frame_count": 14,
+  "parts": 155,
+  "features": {
+    "0": 1,
+    "2": 27,
+    "1": 1,
+    "6": 18,
+    "7": 90,
+    "11": 18
+  },
+  "track_counts": {
+    "Status": 155,
+    "Cell": 45,
+    "Position": 155,
+    "Rotation": 155,
+    "Scaling": 93,
+    "ScalingLocal": 0,
+    "RateOpacity": 47,
+    "Priority": 41,
+    "PartsColor": 0,
+    "VertexCorrection": 0,
+    "OffsetPivot": 0,
+    "PositionAnchor": 0,
+    "SizeForce": 0,
+    "PositionTexture": 0,
+    "RotationTexture": 0,
+    "ScalingTexture": 0,
+    "RadiusCollision": 0,
+    "UserData": 0,
+    "Instance": 0,
+    "Effect": 0,
+    "Deform": 0
+  },
+  "bone_catalog_size": 90,
+  "weighted_mesh_parts": [
+    {
+      "index": 21,
+      "name": "F_hip_01_mesh",
+      "vertices": 13,
+      "triangles": 11
+    },
+    {
+      "index": 26,
+      "name": "F_bust_00_mesh",
+      "vertices": 18,
+      "triangles": 22
+    },
+    {
+      "index": 45,
+      "name": "F_hair_F00_mesh",
+      "vertices": 15,
+      "triangles": 17
+    },
+    {
+      "index": 49,
+      "name": "F_hair_SF00_mesh",
+      "vertices": 15,
+      "triangles": 13
+    },
+    {
+      "index": 53,
+      "name": "F_hair_SB00_mesh",
+      "vertices": 19,
+      "triangles": 17
+    },
+    {
+      "index": 60,
+      "name": "F_hair_B00_mesh",
+      "vertices": 54,
+      "triangles": 74
+    },
+    {
+      "index": 69,
+      "name": "F_wing_01_mesh",
+      "vertices": 20,
+      "triangles": 22
+    },
+    {
+      "index": 75,
+      "name": "F_wing_01b_1",
+      "vertices": 19,
+      "triangles": 22
+    },
+    {
+      "index": 84,
+      "name": "F_wing_00_mesh",
+      "vertices": 19,
+      "triangles": 21
+    },
+    {
+      "index": 90,
+      "name": "F_wing_00b",
+      "vertices": 19,
+      "triangles": 22
+    },
+    {
+      "index": 100,
+      "name": "F_wing_02_mesh",
+      "vertices": 21,
+      "triangles": 23
+    },
+    {
+      "index": 106,
+      "name": "F_wing_02b",
+      "vertices": 20,
+      "triangles": 23
+    },
+    {
+      "index": 116,
+      "name": "F_wing_03_mesh",
+      "vertices": 21,
+      "triangles": 24
+    },
+    {
+      "index": 122,
+      "name": "F_wing_03b",
+      "vertices": 20,
+      "triangles": 23
+    },
+    {
+      "index": 132,
+      "name": "F_wing_04_mesh",
+      "vertices": 23,
+      "triangles": 27
+    },
+    {
+      "index": 138,
+      "name": "F_wing_04b",
+      "vertices": 20,
+      "triangles": 23
+    },
+    {
+      "index": 148,
+      "name": "F_wing_05_mesh",
+      "vertices": 26,
+      "triangles": 29
+    },
+    {
+      "index": 154,
+      "name": "F_wing_05b",
+      "vertices": 20,
+      "triangles": 23
+    }
+  ]
+}
