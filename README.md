@@ -88,15 +88,15 @@ Typical workflow:
 The recommended exporter is the optimized frame-swap exporter.
 
 ```powershell
-py -m ss6runtime bundle-to-spine-frame-swap-all bundle_unit_20080_bc.bin -o spine_output
+py -m ss6runtime bundle-to-spine-frame-swap-all bundle.bin -o spine_output
 ```
 
 The generated directory contains files similar to:
 
 ```text
 spine_output/
-├── bundle_unit_20080_bc.json
-├── bundle_unit_20080_bc.atlas
+├── bundle.json
+├── bundle.atlas
 ├── textures/
 ├── spine_export_report.json
 └── _extracted/
@@ -111,7 +111,7 @@ The exporter automatically prefers animations such as `stand`, `idle`, or `ready
 To choose one explicitly:
 
 ```powershell
-py -m ss6runtime bundle-to-spine-frame-swap-all bundle_unit_20080_bc.bin -o spine_output --setup-animation stand --setup-frame 0
+py -m ss6runtime bundle-to-spine-frame-swap-all bundle.bin -o spine_output --setup-animation stand --setup-frame 0
 ```
 
 ### Filter animations
@@ -119,13 +119,13 @@ py -m ss6runtime bundle-to-spine-frame-swap-all bundle_unit_20080_bc.bin -o spin
 Export only selected animations:
 
 ```powershell
-py -m ss6runtime bundle-to-spine-frame-swap-all bundle_unit_20080_bc.bin -o spine_output --include "stand|move|attack|damage"
+py -m ss6runtime bundle-to-spine-frame-swap-all bundle.bin -o spine_output --include "stand|move|attack|damage"
 ```
 
 Exclude selected animations:
 
 ```powershell
-py -m ss6runtime bundle-to-spine-frame-swap-all bundle_unit_20080_bc.bin -o spine_output --exclude "victory|effect"
+py -m ss6runtime bundle-to-spine-frame-swap-all bundle.bin -o spine_output --exclude "victory|effect"
 ```
 
 Both options accept regular expressions and can be used together.
@@ -149,19 +149,19 @@ Default tolerance:
 Use a stricter tolerance:
 
 ```powershell
-py -m ss6runtime bundle-to-spine-frame-swap-all bundle_unit_20080_bc.bin -o spine_output --dedupe-tolerance 0.00001
+py -m ss6runtime bundle-to-spine-frame-swap-all bundle.bin -o spine_output --dedupe-tolerance 0.00001
 ```
 
 Use more aggressive deduplication:
 
 ```powershell
-py -m ss6runtime bundle-to-spine-frame-swap-all bundle_unit_20080_bc.bin -o spine_output --dedupe-tolerance 0.001
+py -m ss6runtime bundle-to-spine-frame-swap-all bundle.bin -o spine_output --dedupe-tolerance 0.001
 ```
 
 Disable deduplication completely:
 
 ```powershell
-py -m ss6runtime bundle-to-spine-frame-swap-all bundle_unit_20080_bc.bin -o spine_output --no-dedupe
+py -m ss6runtime bundle-to-spine-frame-swap-all bundle.bin -o spine_output --no-dedupe
 ```
 
 ### Lower export frame rate
@@ -169,7 +169,7 @@ py -m ss6runtime bundle-to-spine-frame-swap-all bundle_unit_20080_bc.bin -o spin
 Keep the original animation duration while using fewer baked samples:
 
 ```powershell
-py -m ss6runtime bundle-to-spine-frame-swap-all bundle_unit_20080_bc.bin -o spine_output --export-fps 15
+py -m ss6runtime bundle-to-spine-frame-swap-all bundle.bin -o spine_output --export-fps 15
 ```
 
 Other useful values include `20`, `12`, and `10`.
@@ -179,7 +179,7 @@ Other useful values include `20`, `12`, and `10`.
 Export every second source frame:
 
 ```powershell
-py -m ss6runtime bundle-to-spine-frame-swap-all bundle_unit_20080_bc.bin -o spine_output --frame-step 2
+py -m ss6runtime bundle-to-spine-frame-swap-all bundle.bin -o spine_output --frame-step 2
 ```
 
 `--frame-step` takes precedence over `--export-fps`.
@@ -193,13 +193,13 @@ For best fidelity, start with the original frame rate and only downsample after 
 Extract the main character data from a bundle:
 
 ```powershell
-py -m ss6runtime extract-bundle bundle_unit_20080_bc.bin -o extracted_20080
+py -m ss6runtime extract-bundle bundle.bin -o extracted
 ```
 
 This produces:
 
 ```text
-extracted_20080/
+extracted/
 ├── textures/
 ├── animation_raw.json
 ├── cellmap.json
@@ -210,13 +210,13 @@ extracted_20080/
 Extract every animation:
 
 ```powershell
-py -m ss6runtime extract-bundle bundle_unit_20080_bc.bin -o extracted_20080 --all-animations
+py -m ss6runtime extract-bundle bundle.bin -o extracted --all-animations
 ```
 
 Additional raw animation files will be written under:
 
 ```text
-extracted_20080/animations/
+extracted/animations/
 ```
 
 ---
@@ -228,13 +228,13 @@ Before exporting to Spine, you can render the SS6 animation directly with the Py
 ### Preview one frame
 
 ```powershell
-py -m ss6runtime preview --parts-raw extracted_20080\parts_raw.json --animation-raw extracted_20080\animation_raw.json --cellmap extracted_20080\cellmap.json --texture-dir extracted_20080\textures --frame 0 --mode native2d --coordinate-mode yup -o frame0.png
+py -m ss6runtime preview --parts-raw extracted\parts_raw.json --animation-raw extracted\animation_raw.json --cellmap extracted\cellmap.json --texture-dir extracted\textures --frame 0 --mode native2d --coordinate-mode yup -o frame0.png
 ```
 
 ### Preview a complete animation
 
 ```powershell
-py -m ss6runtime preview-animation --parts-raw extracted_20080\parts_raw.json --animation-raw extracted_20080\animation_raw.json --cellmap extracted_20080\cellmap.json --texture-dir extracted_20080\textures --mode native2d --coordinate-mode yup -o preview_animation
+py -m ss6runtime preview-animation --parts-raw extracted\parts_raw.json --animation-raw extracted\animation_raw.json --cellmap extracted\cellmap.json --texture-dir extracted\textures --mode native2d --coordinate-mode yup -o preview_animation
 ```
 
 This creates PNG frames and, by default, a GIF preview.
@@ -242,7 +242,7 @@ This creates PNG frames and, by default, a GIF preview.
 ### Render every animation in a bundle
 
 ```powershell
-py -m ss6runtime render-all-animations bundle_unit_20080_bc.bin -o rendered_20080
+py -m ss6runtime render-all-animations bundle.bin -o rendered_20080
 ```
 
 The command also creates an HTML gallery for quickly reviewing all animations.
@@ -280,7 +280,7 @@ The frame-swap validator compares the geometry selected by the generated Spine a
 Example:
 
 ```powershell
-py -m ss6runtime validate-spine-frame-swap --spine-json spine_output\bundle_unit_20080_bc.json --spine-dir spine_output --animation victory --part-filter "hand|arm" -o validation_victory
+py -m ss6runtime validate-spine-frame-swap --spine-json spine_output\bundle.json --spine-dir spine_output --animation victory --part-filter "hand|arm" -o validation_victory
 ```
 
 The validation report includes:
